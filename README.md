@@ -1,12 +1,23 @@
 
-# AWS API Gateway HTTP API to AWS Lambda in VPC to DynamoDB CDK Python Sample!
+# AWS API Gateway HTTP API to AWS Lambda in VPC to DynamoDB ans S3 CDK Python Sample!
 
 
 ## Overview
 
-Creates an [AWS Lambda](https://aws.amazon.com/lambda/) function writing to [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) and invoked by [Amazon API Gateway](https://aws.amazon.com/api-gateway/) REST API. 
-
-![architecture](docs/architecture.png)
+Coding Exercise
+You are developing the service layer of an application like Instagram. You are working 
+on a module which is responsible for supporting image upload and storage in the 
+Cloud. Along with the image, its metadata must be persisted in a NoSQL storage. 
+Multiple users are going to use this service at the same time. For this reason, the 
+service should be scalable. 
+The team currently uses API Gateway, Lambda Functions, S3 and DynamoDB services. 
+Language: Python3.7+
+Tasks:
+1. Create APIs for:
+1. Uploading image with metadata
+2. List all images, support at least two filters to search
+3. View/download image
+4. Delete an image
 
 ## Setup
 
@@ -66,24 +77,12 @@ $ cdk deploy
 With specific profile
 
 ```
-$ cdk deploy --profile test
 ```
 
 ## After Deploy
-Navigate to AWS API Gateway console and test the API with below sample data 
-```json
-{
-    "year":"2023", 
-    "title":"kkkg",
-    "id":"12"
-}
-```
+https://github.com/Deependra-dot/fake_insta/blob/master/finsta.postman_collection.json
 
-You should get below response 
-
-```json
-{"message": "Successfully inserted data!"}
-```
+import postman collection from above link and test the various scenarios of adding the images and viewing the image and deleting the image.
 
 ## Cleanup 
 Run below script to delete AWS resources created by this sample stack.
